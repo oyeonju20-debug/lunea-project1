@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUNÉA PROJECT | Official</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:#080812;color:#f7f4ff;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.nav{position:fixed;top:0;left:0;right:0;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;z-index:10;background:rgba(8,8,18,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-family:'Playfair Display',serif;letter-spacing:3px;font-size:22px}.logo small{display:block;font-family:'Noto Sans KR';font-size:7px;letter-spacing:4px;text-align:center;color:#aaa5c8}
+.navlinks{display:flex;gap:34px;font-size:13px;color:#c9c5d8}.navlinks a:hover{color:white}
+.hero{min-height:100vh;padding:170px 7% 100px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 75% 35%,#393060 0,#17162c 30%,#080812 68%)}
+.moon{position:absolute;width:480px;height:480px;border-radius:50%;right:4%;top:18%;background:radial-gradient(circle at 35% 30%,#fff,#d9d2ff 22%,#9b8be0 48%,rgba(130,110,210,.05) 70%);filter:drop-shadow(0 0 80px rgba(167,145,255,.5));opacity:.9}
+.hero:after{content:"✦   ·   ✧   ·   ✦";position:absolute;right:10%;top:13%;font-size:18px;letter-spacing:28px;color:#dcd6ff;opacity:.5}
+.heroText{position:relative;z-index:2;max-width:680px}
+.eyebrow{font-size:12px;letter-spacing:5px;color:#aaa0db;margin-bottom:22px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(55px,9vw,105px);line-height:.95;letter-spacing:4px}
+.hero p{margin:30px 0;color:#c0bdd0;max-width:520px;font-weight:300}
+.btns{display:flex;gap:12px}.btn{padding:13px 25px;border-radius:30px;font-size:13px;border:1px solid rgba(255,255,255,.2)}.btn.primary{background:#f5f1ff;color:#171421;border:0}
+section{padding:110px 7%;max-width:1250px;margin:auto}.sectionTag{font-size:10px;letter-spacing:4px;color:#9389bd;margin-bottom:10px}.sectionTitle{font-family:'Playfair Display';font-size:42px;margin-bottom:12px}.sectionDesc{color:#9996a9;font-size:14px;margin-bottom:45px}
+.about{display:grid;grid-template-columns:1fr 1.3fr;gap:70px}.aboutText{color:#aaa7b8;font-size:14px}.quote{font-family:'Playfair Display';font-size:26px;color:#e8e2ff;border-left:2px solid #8273b9;padding-left:22px;margin-top:28px}
+.members{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{height:390px;border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;position:relative;background:linear-gradient(150deg,#25233d,#10101b);transition:.3s}.card:hover{transform:translateY(-7px);border-color:rgba(210,200,255,.35)}
+.avatar{height:100%;display:flex;align-items:center;justify-content:center;font-size:100px;background:radial-gradient(circle at 50% 35%,#62558f,#25233d 35%,#10101b 72%);opacity:.9}
+.card:nth-child(2) .avatar{background:radial-gradient(circle at 50% 35%,#8b5778,#292039 38%,#10101b 72%)}
+.card:nth-child(3) .avatar{background:radial-gradient(circle at 50% 35%,#50748a,#202c3b 38%,#10101b 72%)}
+.cardInfo{position:absolute;bottom:0;left:0;right:0;padding:25px;background:linear-gradient(transparent,rgba(5,5,12,.98))}
+.cardInfo small{color:#aaa2c8;letter-spacing:2px}.cardInfo h3{font-size:24px;font-family:'Playfair Display'}
+.news{display:grid;grid-template-columns:1.5fr 1fr;gap:18px}.newsItem{padding:28px;border:1px solid rgba(255,255,255,.09);border-radius:15px;background:#0d0d18}.newsItem small{color:#827aa0}.newsItem h3{margin:10px 0;font-size:17px}.newsItem p{font-size:13px;color:#888596}
+.audition{border:1px solid rgba(190,178,255,.2);border-radius:24px;padding:60px;background:radial-gradient(circle at 80% 50%,#292443,#10101a 55%);display:flex;justify-content:space-between;align-items:center;gap:40px}.audition p{color:#aaa6b7;font-size:14px;max-width:580px}
+footer{border-top:1px solid rgba(255,255,255,.08);padding:50px 7%;color:#6f6c7d;font-size:11px;display:flex;justify-content:space-between}
+@media(max-width:760px){.nav{padding:0 5%}.navlinks{display:none}.hero{padding:140px 7% 90px}.moon{width:300px;height:300px;right:-100px;top:30%;opacity:.35}.about,.news{grid-template-columns:1fr}.members{grid-template-columns:1fr}.card{height:350px}.audition{display:block;padding:35px}.audition .btn{display:inline-block;margin-top:25px}section{padding:80px 7%}}
+
+.applyForm{margin-top:28px;padding:30px;border:1px solid rgba(255,255,255,.09);border-radius:18px;background:rgba(10,10,20,.55)}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.applyForm label{display:block;font-size:11px;letter-spacing:1px;color:#aaa2c8;margin-bottom:7px}
+.applyForm input,.applyForm textarea,.applyForm select{width:100%;background:#10101b;border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:12px;color:#eee;font-family:inherit;outline:none}
+.applyForm textarea{min-height:110px;resize:vertical}.applyForm input:focus,.applyForm textarea:focus,.applyForm select:focus{border-color:#8f82c5}
+.full{grid-column:1/-1}.formNote{font-size:11px;color:#777385;margin-top:15px}
+@media(max-width:760px){.formGrid{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<a class="logo" href="#">LUNÉA<small>PROJECT</small></a>
+<div class="navlinks">
+<a href="#about">ABOUT</a><a href="#members">ARTISTS</a><a href="#news">NEWS</a><a href="#audition">AUDITION</a>
+</div>
+</nav>
+
+<header class="hero">
+<div class="moon"></div>
+<div class="heroText">
+<div class="eyebrow">VIRTUAL CREATOR LABEL</div>
+<h1>LUNÉA<br>PROJECT</h1>
+<p>달빛 아래, 각자의 이야기가 시작됩니다.<br>우리는 새로운 가능성을 가진 버추얼 크리에이터와 함께합니다.</p>
+<div class="btns"><a class="btn primary" href="#members">ARTISTS</a><a class="btn" href="#audition">JOIN US</a></div>
+</div>
+</header>
+
+<section id="about">
+<div class="sectionTag">01 / ABOUT</div>
+<div class="about">
+<div><div class="sectionTitle">BE YOUR OWN STAR.</div><div class="quote">“당신만의 빛은,<br>누구와도 같지 않으니까.”</div></div>
+<div class="aboutText">LUNÉA PROJECT는 버추얼 크리에이터의 개성과 가능성을 존중하는 크리에이터 레이블입니다.<br><br>방송, 음악, 게임, 일러스트레이션 등 다양한 콘텐츠를 통해 각자의 세계를 만들어가고, 크리에이터가 오래 활동할 수 있는 환경을 함께 만들어갑니다.</div>
+</div>
+</section>
+
+<section id="members">
+<div class="sectionTag">02 / ARTISTS</div>
+<div class="sectionTitle">OUR ARTISTS</div>
+<div class="sectionDesc">LUNÉA PROJECT와 함께 새로운 이야기를 만들어가는 크리에이터</div>
+<div class="members">
+<div class="card"><div class="avatar">☾</div><div class="cardInfo"><small>GEN 01 · 001</small><h3>COMING SOON</h3></div></div>
+<div class="card"><div class="avatar">✦</div><div class="cardInfo"><small>GEN 01 · 002</small><h3>COMING SOON</h3></div></div>
+<div class="card"><div class="avatar">✧</div><div class="cardInfo"><small>GEN 01 · 003</small><h3>COMING SOON</h3></div></div>
+</div>
+</section>
+
+<section id="news">
+<div class="sectionTag">03 / NEWS</div>
+<div class="sectionTitle">LATEST NEWS</div>
+<div class="news">
+<div class="newsItem"><small>2026.09.30</small><h3>LUNÉA PROJECT 공식 홈페이지 OPEN</h3><p>새로운 버추얼 크리에이터 레이블의 시작을 알립니다.</p></div>
+<div class="newsItem"><small>COMING SOON</small><h3>1기생 오디션 안내</h3><p>곧 공개됩니다.</p></div>
+</div>
+</section>
+
+<section id="audition">
+<div class="audition" style="display:block;">
+<div class="sectionTag">04 / AUDITION</div>
+<div class="sectionTitle">LUNÉA PROJECT<br>1ST GENERATION AUDITION</div>
+<p style="color:#aaa6b7;max-width:720px;margin:18px 0 38px;font-size:14px;">
+LUNÉA PROJECT와 함께 자신만의 이야기를 만들어갈 버추얼 크리에이터를 모집합니다.
+방송 경험이 없어도 괜찮습니다. 자신의 개성과 열정을 보여주세요.
+</p>
+
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:30px;">
+<div class="newsItem">
+<small>RECRUITMENT</small>
+<h3>모집 대상</h3>
+<p>• 버추얼 크리에이터 활동을 희망하는 분<br>
+• 지속적으로 방송 및 콘텐츠 활동이 가능한 분<br>
+• 자신의 개성과 콘텐츠를 적극적으로 만들어갈 분<br>
+• 경력 및 방송 경험 무관</p>
+</div>
+<div class="newsItem">
+<small>CONTENT</small>
+<h3>모집 분야</h3>
+<p>• 게임 / 잡담 / 노래 / 음악<br>
+• 그림 / 창작 / ASMR / 기타 콘텐츠<br>
+• 본인만의 특색 있는 콘텐츠도 지원 가능</p>
+</div>
+<div class="newsItem">
+<small>APPLICATION</small>
+<h3>지원 방법</h3>
+<p>아래 이메일로 지원서를 보내주세요.<br><br>
+<strong style="color:#eee;">hi00005814@gmail.com</strong><br>
+제목: [LUNÉA 1기 오디션] 이름 / 닉네임</p>
+</div>
+<div class="newsItem">
+<small>PROCESS</small>
+<h3>오디션 절차</h3>
+<p>01. 지원서 접수<br>
+02. 서류 검토<br>
+03. 1차 결과 안내<br>
+04. 온라인 인터뷰 및 오디션<br>
+05. 최종 합격 안내</p>
+</div>
+</div>
+
+<div class="newsItem" style="margin-bottom:30px;">
+<small>APPLICATION FORM</small>
+<h3>지원서에 포함해주세요</h3>
+<p>① 활동명 / 닉네임<br>
+② 자기소개<br>
+③ 지원 동기<br>
+④ 희망 콘텐츠 및 방송 방향<br>
+⑤ 방송·창작 활동 경력 (선택)<br>
+⑥ 본인을 확인할 수 있는 SNS 또는 포트폴리오 링크<br>
+⑦ 본인이 준비한 자기소개 영상 또는 음성 자료 (선택)</p>
+</div>
+
+<p style="color:#777385;font-size:12px;margin-bottom:25px;">
+※ 제출해주신 자료는 오디션 심사를 위한 목적으로만 사용됩니다.<br>
+※ 합격자에게는 이메일을 통해 개별 연락드립니다.<br>
+※ 모집 일정 및 세부 사항은 운영 상황에 따라 변경될 수 있습니다.
+</p>
+
+<a class="btn primary" href="mailto:hi00005814@gmail.com?subject=%5BLUN%C3%89A%201%EA%B8%B0%20%EC%98%A4%EB%94%94%EC%85%98%5D%20%EC%9D%B4%EB%A6%84%20%2F%20%EB%8B%89%EB%84%A4%EC%9E%84">AUDITION APPLY →</a>
+
+<div class="applyForm">
+<div class="sectionTag">ONLINE APPLICATION</div>
+<div class="sectionTitle" style="font-size:28px;">AUDITION FORM</div>
+<div class="formGrid">
+<div><label>활동명 / 닉네임</label><input id="name" placeholder="예: 루네"></div>
+<div><label>이메일</label><input id="email" type="email" placeholder="답변 받을 이메일"></div>
+<div><label>지원 분야</label><select id="field"><option>게임 방송</option><option>노래 / 음악</option><option>잡담 / 토크</option><option>그림 / 창작</option><option>ASMR</option><option>기타</option></select></div>
+<div><label>SNS / 포트폴리오</label><input id="sns" placeholder="링크가 있다면 입력"></div>
+<div class="full"><label>자기소개</label><textarea id="intro" placeholder="자신을 자유롭게 소개해주세요."></textarea></div>
+<div class="full"><label>지원 동기 및 활동 계획</label><textarea id="reason" placeholder="LUNÉA PROJECT에서 어떤 활동을 하고 싶은지 적어주세요."></textarea></div>
+</div>
+<p class="formNote">작성 후 아래 버튼을 누르면 기본 메일 앱이 열리며, 입력한 내용이 지원 메일에 자동으로 정리됩니다.</p>
+<button class="btn primary" style="margin-top:18px;cursor:pointer;" onclick="sendApplication()">지원서 메일 작성하기 →</button>
+</div>
+</div>
+</section>
+
+<footer><span>© 2026 LUNÉA PROJECT. ALL RIGHTS RESERVED.</span><span>CONTACT · hi00005814@gmail.com</span></footer>
+
+<script>
+function sendApplication(){
+  const name=document.getElementById('name').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const field=document.getElementById('field').value;
+  const sns=document.getElementById('sns').value.trim();
+  const intro=document.getElementById('intro').value.trim();
+  const reason=document.getElementById('reason').value.trim();
+  if(!name||!email||!intro||!reason){
+    alert('활동명, 이메일, 자기소개, 지원 동기는 꼭 입력해주세요.');
+    return;
+  }
+  const subject='[LUNÉA 1기 오디션] '+name;
+  const body=
+`[LUNÉA PROJECT 1기 오디션 지원서]
+
+활동명 / 닉네임: ${name}
+이메일: ${email}
+지원 분야: ${field}
+SNS / 포트폴리오: ${sns || '없음'}
+
+[자기소개]
+${intro}
+
+[지원 동기 및 활동 계획]
+${reason}
+
+※ 필요한 경우 포트폴리오 및 추가 자료를 본 메일에 첨부해주세요.`;
+  location.href='mailto:hi00005814@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+}
+</script>
+</body>
+</html>
